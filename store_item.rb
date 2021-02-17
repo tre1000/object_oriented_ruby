@@ -18,13 +18,25 @@ Replace your “reader” and “writer” methods using the attr_reader and att
 =end
 class Item
   attr_reader :section, :size, :price, :in_stock
+  attr_writer :price
 
-  def initialize(input_section, input_size, input_price, input_in_stock)
-    @section = input_section
-    @size = input_size
-    @price = input_price
-    @in_stock = input_in_stock
+  def initialize(input_options)
+    @section = input_options[:section]
+    @size = input_options[:size]
+    @price = input_options[:price]
+    @in_stock = input_options[:in_stock]
+  end
+
+  def sale(percent_off)
+    price_cut = @price * percent_off
+    @price = @price - price_cut
+  end
+
+  def toggle_in_stock
+    @in_stock = !@in_stock
   end
 end
 
-mochi = Item.new("frozen", "12 pieces", 5.50, true)
+mochi = Item.new(section: "frozen", size: "12 pieces", price: 5.50, in_stock: true)
+green_tea = Item.new(section: "refrigerated", size: "16 oz", price: 1.50, in_stock: true)
+rice = Item.new(section: "grocery", size: "10 pounds", price: 30, in_stock: true)
