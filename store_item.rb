@@ -18,7 +18,7 @@ Replace your “reader” and “writer” methods using the attr_reader and att
 =end
 class Item
   attr_reader :section, :size, :price, :in_stock
-  attr_writer :price
+  attr_writer :price, :in_stock
 
   def initialize(input_options)
     @section = input_options[:section]
