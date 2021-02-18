@@ -15,6 +15,7 @@ class Employee
 
   def give_annual_raise
     @salary = 1.05 * @salary
+    puts "#{@first_name} #{@last_name} salary raised."
   end
 end
 
@@ -32,7 +33,6 @@ class Manager < Employee
   def give_all_raise
     @employees.each do |x|
       x.give_annual_raise
-      puts "#{x.first_name} salary raised."
     end
   end
 
@@ -53,6 +53,8 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 manager.print_info
 manager.send_report
 manager.give_all_raise
+employee1.print_info
+employee2.print_info
 puts employee1.active
 puts employee2.active
 manager.fire_all_employees
