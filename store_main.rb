@@ -1,8 +1,8 @@
-# require "./store_item.rb"
-# require "./store_perishable.rb"
-require_relative "store_item"
-require_relative "store_perishable"
-#either of the above works.
+require "./store_item"
+require "./store_perishable"
+# require_relative "store_item"
+# require_relative "store_perishable"
+# any of the above work.
 
 mochi = Item.new(section: "frozen", size: "12 pieces", price: 5.50, in_stock: true)
 green_tea = Item.new(section: "refrigerated", size: "16 oz", price: 1.50, in_stock: true)
