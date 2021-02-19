@@ -43,3 +43,6 @@ p car.direction
 
 p bike.speed
 p bike.direction
+
+bike.ring_bell
+car.honk_horn
